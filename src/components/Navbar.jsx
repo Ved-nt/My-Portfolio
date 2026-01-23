@@ -41,21 +41,15 @@ export default function Navbar() {
   const NavLink = ({ label, target }) => (
     <button
       onClick={() => scrollToSection(target)}
-      className="relative text-lg cursor-pointer
-                 text-white/70
-                 transition-colors duration-300
-                 hover:text-teal-400
-                 group"
+      className="relative text-md cursor-pointer text-white transition-colors duration-300
+      hover:text-teal-400 group"
     >
       {label}
 
       {/* underline */}
       <span
-        className="absolute left-0 -bottom-1 h-[2px] w-full
-                   bg-teal-400/70
-                   scale-x-0 origin-left
-                   transition-transform duration-300
-                   group-hover:scale-x-100"
+        className="absolute left-0 -bottom-1 h-[2px] w-full bg-teal-400/70 scale-x-0 origin-left transition-transform duration-300 
+        group-hover:scale-x-100"
       />
     </button>
   );
@@ -63,14 +57,11 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 w-full z-50 px-10 py-6
-                 flex justify-between items-center
-                 backdrop-blur-sm
-                 text-white"
+      className="fixed top-0 left-0 w-full z-50 px-10 py-6 flex justify-between items-center backdrop-blur-sm text-white"
     >
       <h1
         onClick={() => scrollToSection("home")}
-        className="text-2xl font-semibold tracking-wide cursor-pointer"
+        className="text-2xl  text-teal-400 font-semibold tracking-wide cursor-pointer"
       >
         VS
       </h1>
