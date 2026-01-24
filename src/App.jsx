@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./sections/About.jsx";
 import Projects from "./sections/Projects.jsx";
+import Skills from "./sections/Skills.jsx";
 
 export default function App() {
   return (
@@ -30,6 +31,9 @@ export default function App() {
       </section>
       <section id="projects" className="relative z-10 min-h-screen">
         <Projects />
+      </section>
+      <section id="skills" className="relative z-10 min-h-screen">
+        <Skills />
       </section>
     </div>
   );

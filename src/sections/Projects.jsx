@@ -55,6 +55,8 @@ export default function Projects() {
 
   /* Main heading animation */
   useEffect(() => {
+    if (!sectionRef.current) return; // ✅ guard against null
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
@@ -85,7 +87,7 @@ export default function Projects() {
           },
         }
       );
-    }, sectionRef);
+    }, sectionRef.current); // ✅ use .current here
 
     return () => ctx.revert();
   }, []);
