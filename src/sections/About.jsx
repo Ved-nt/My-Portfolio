@@ -64,7 +64,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden text-white"
+      className="relative min-h-screen flex cursor-pointer items-center justify-center px-6 overflow-hidden text-white"
     >
       {/* 3D Background */}
       <div className="absolute inset-0 pointer-events-none opacity-40">

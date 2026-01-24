@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center cursor-pointer justify-center overflow-hidden"
     >
       {/* Three.js Background */}
       <div className="absolute inset-0 z-0">
@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-semibold tracking-tight text-white"
+          className="text-2xl md:text-7xl font-bold tracking-tight text-teal-400"
         >
           Vedant Sharma
         </motion.h1>
