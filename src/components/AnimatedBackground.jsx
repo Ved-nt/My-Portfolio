@@ -6,9 +6,9 @@ import * as random from "maath/random";
 function ParticleField({ color }) {
   const ref = useRef();
 
-  // Generate random positions for particles inside a sphere
+  // Generate fewer random positions inside a smaller sphere
   const positions = useMemo(
-    () => random.inSphere(new Float32Array(2000), { radius: 2.0 }), // ✅ slightly larger sphere radius
+    () => random.inSphere(new Float32Array(1000), { radius: 1.5 }), 
     []
   );
 
@@ -25,13 +25,13 @@ function ParticleField({ color }) {
       positions={positions}
       stride={3}
       frustumCulled
-      position={[0, -0.5, 0]}   // ✅ slide sphere down along Y-axis
+      position={[0, 0, 0]}
     >
       <PointMaterial
         transparent
-        vertexColors={false}     // ✅ force uniform color
-        color={color}            // ✅ use the passed-in color
-        size={0.02}              // ✅ larger dots (was 0.015)
+        vertexColors={false}
+        color={color}
+        size={0.015}          // dot size
         sizeAttenuation
         depthWrite={false}
       />

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Scene from "../canvas/Scene";
 
-export default function Hero() {
+export default function Home() {
   const heroRef = useRef(null);
 
   // Mouse parallax effect

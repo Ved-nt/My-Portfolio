@@ -142,10 +142,11 @@ export default function Skills() {
 
   return (
     <section
-      id="skills"
-      ref={sectionRef}
-      className="relative min-h-screen px-6 flex items-center overflow-hidden text-white"
-    >
+  id="skills"
+  ref={sectionRef}
+  className="relative min-h-screen px-6 py-20 pb-32 flex items-center overflow-hidden text-white scroll-mt-24"
+>
+
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <AnimatedBackground dotColor="#38fdfd" />
