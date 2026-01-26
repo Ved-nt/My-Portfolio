@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./sections/About.jsx";
@@ -6,19 +6,32 @@ import Projects from "./sections/Projects.jsx";
 import Skills from "./sections/Skills.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollIndicator from "./components/ScrollIndicator.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  const [showIndicator, setShowIndicator] = useState(false);
+
   useEffect(() => {
-    // Refresh ScrollTrigger when navigating via hash links (navbar clicks)
+    const handleScroll = () => {
+      // Show indicator after Home section
+      setShowIndicator(window.scrollY > window.innerHeight * 0.6);
+    };
+
     const handleHashChange = () => {
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
       });
     };
+
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   return (
@@ -35,17 +48,28 @@ export default function App() {
         />
       </div>
 
+      {/* Scroll Indicator (only after hero) */}
+      {showIndicator && (
+        <div className="fixed inset-0 z-40 pointer-events-none animate-fadeIn">
+          <ScrollIndicator />
+        </div>
+      )}
+
       {/* UI Sections */}
       <Navbar />
+
       <section id="home" className="relative z-10 h-screen">
         <Home />
       </section>
+
       <section id="about" className="relative z-10 min-h-screen">
         <About />
       </section>
+
       <section id="projects" className="relative z-10 min-h-screen">
         <Projects />
       </section>
+
       <section id="skills" className="relative z-10 min-h-screen">
         <Skills />
       </section>

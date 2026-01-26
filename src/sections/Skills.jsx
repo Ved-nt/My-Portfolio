@@ -18,7 +18,7 @@ import {
   SiMongodb,
   SiTypescript,
   SiPython,
-  SiDocker,
+  SiC
 } from "react-icons/si";
 import {FaJava} from "react-icons/fa"
 import AnimatedBackground from "../components/AnimatedBackground.jsx";
@@ -36,6 +36,7 @@ const skillsData = [
       { name: "CSS", icon: <SiCss3 /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss /> },
       { name: "Three.js", icon: <SiThreedotjs /> },
+      {name: "TypeScript", icon:<SiTypescript />},
     ],
   },
   {
@@ -242,7 +243,7 @@ export default function Skills() {
             <div className="relative z-10">
               <div className="card-heading mb-6">
                 <h3 className="text-2xl font-semibold">
-                  Languages & Technologies
+                  Languages
                 </h3>
                 <span className="card-line block h-[2px] w-12 bg-teal-400 mt-2 origin-left" />
               </div>
@@ -250,8 +251,7 @@ export default function Skills() {
               <div className="grid grid-cols-2 gap-6">
                 <SkillItem icon={<SiPython />} label="Python" />
                 <SkillItem icon={<FaJava />} label="Java" />
-                <SkillItem icon={<SiTypescript />} label="TypeScript" />
-                <SkillItem icon={<SiDocker />} label="Docker" />
+                <SkillItem icon={<SiC />} label="C Language" />
               </div>
             </div>
           </div>
