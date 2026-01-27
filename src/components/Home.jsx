@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import Scene from "../canvas/Scene";
 
 export default function Home() {
   const heroRef = useRef(null);
 
-  // Mouse parallax effect
+  // 🔹 Smooth scroll handler (same behavior as Navbar)
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  // 🔹 Mouse parallax effect
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!heroRef.current) return;
@@ -26,20 +36,19 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center cursor-pointer justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Three.js Background */}
+      {/* 🔹 Three.js Background */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 8], fov: 75 }}>
           <Scene />
         </Canvas>
       </div>
 
-
-      {/* Content */}
+      {/* 🔹 Hero Content */}
       <div
         ref={heroRef}
-        className="relative z-20 text-center px-6 max-w-4xl
+        className="relative z-20 text-center px-6 max-w-7xl
                    transition-transform duration-200 ease-out"
       >
         <motion.h1
@@ -66,29 +75,28 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-10 flex justify-center gap-6"
         >
-          <a
-            href="#projects"
+          {/* 🔹 View Projects (NO hash change) */}
+          <button
+            onClick={() => scrollToSection("projects")}
             className="px-6 py-3 rounded-lg border border-gray-500
                        text-gray-300 hover:text-white
                        hover:border-teal-400
                        transition-all duration-300"
           >
             View Projects
-          </a>
+          </button>
 
-          <a
-            href="#contact"
+          {/* 🔹 Contact */}
+          <button
+            onClick={() => scrollToSection("contact")}
             className="px-6 py-3 rounded-lg bg-teal-500/10
                        text-teal-300 hover:bg-teal-500/20
                        transition-all duration-300"
           >
             Contact Me
-          </a>
+          </button>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      
     </section>
   );
 }
