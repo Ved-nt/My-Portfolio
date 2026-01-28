@@ -55,7 +55,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-2xl md:text-7xl font-bold tracking-tight text-teal-400"
+          className="text-2xl md:text-8xl font-bold tracking-tight text-teal-400"
         >
           Vedant Sharma
         </motion.h1>
