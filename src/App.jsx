@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./sections/About.jsx";
 import Projects from "./sections/Projects.jsx";
 import Skills from "./sections/Skills.jsx";
+import Achievements from "./sections/Achievements.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollIndicator from "./components/ScrollIndicator.jsx";
@@ -72,6 +73,10 @@ export default function App() {
 
       <section id="skills" className="relative z-10 min-h-screen">
         <Skills />
+      </section>
+
+      <section id="achievements" className="relative z-10 min-h-screen">
+        <Achievements />
       </section>
     </div>
   );

@@ -111,7 +111,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden text-white"
+      className="relative cursor-pointer min-h-screen flex items-center justify-center px-6 overflow-hidden text-white"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none opacity-40">

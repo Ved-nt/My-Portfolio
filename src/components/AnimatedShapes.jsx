@@ -37,9 +37,9 @@ function FloatingShape({ position, speed, geometry }) {
         color="#2dd4bf"          // teal-400
         wireframe
         transparent
-        opacity={0.4}
+        opacity={0.5}
         emissive="#2dd4bf"
-        emissiveIntensity={0.5}
+        emissiveIntensity={0.3}
       />
     </mesh>
   );

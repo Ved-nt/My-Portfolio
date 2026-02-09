@@ -145,7 +145,7 @@ export default function Skills() {
     <section
   id="skills"
   ref={sectionRef}
-  className="relative min-h-screen px-6 py-20 pb-32 flex items-center overflow-hidden text-white scroll-mt-24"
+  className="relative cursor-pointer min-h-screen px-6 py-20 pb-32 flex items-center overflow-hidden text-white scroll-mt-24"
 >
 
       {/* Background */}
