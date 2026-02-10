@@ -26,6 +26,7 @@ const achievements = [
 export default function Achievements() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
+  const titleLineRef = useRef(null); // NEW underline ref
   const lineRef = useRef(null);
   const itemsRef = useRef([]);
 
@@ -37,6 +38,18 @@ export default function Achievements() {
         y: 60,
         duration: 1,
         ease: "power3.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 80%",
+        },
+      });
+
+      // Underline animation (beneath heading)
+      gsap.from(titleLineRef.current, {
+        scaleX: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        transformOrigin: "left",
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 80%",
@@ -96,6 +109,13 @@ export default function Achievements() {
           >
             Achievements
           </h2>
+
+          {/* Underline */}
+          <span
+            ref={titleLineRef}
+            className="block mx-auto mt-4 h-[3px] w-24 bg-teal-400 origin-left"
+          />
+
           <p className="mt-4 text-gray-400 text-lg">
             Milestones that shaped my journey
           </p>

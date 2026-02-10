@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function About() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
+  const titleLineRef = useRef(null); // NEW underline ref
   const contentRef = useRef(null);
   const leftColRef = useRef(null);
   const rightColRef = useRef(null);
@@ -28,6 +29,18 @@ export default function About() {
         stagger: 0.06,
         duration: 1,
         ease: "power4.out",
+      });
+
+      /* ---- Underline animation ---- */
+      gsap.from(titleLineRef.current, {
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+        },
+        scaleX: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        transformOrigin: "left",
       });
 
       /* ---- LEFT COLUMN ---- */
@@ -73,26 +86,31 @@ export default function About() {
 
       <div className="max-w-6xl w-full relative z-10">
         {/* Animated Title */}
-        <h2
-          ref={titleRef}
-          className="text-5xl md:text-7xl font-bold mb-16 flex flex-wrap"
-        >
-          {"About Me".split("").map((char, i) => (
-            <span key={i} className="inline-block">
-              {char === " " ? "\u00A0" : char}
-            </span>
-          ))}
-        </h2>
+        <div className="mb-16">
+          <h2
+            ref={titleRef}
+            className="text-5xl md:text-7xl font-bold flex flex-wrap"
+          >
+            {"About Me".split("").map((char, i) => (
+              <span key={i} className="inline-block">
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </h2>
+
+          {/* Underline */}
+          <span
+            ref={titleLineRef}
+            className="block mt-4 h-[3px] w-24 bg-teal-400 origin-left"
+          />
+        </div>
 
         <div
           ref={contentRef}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
           {/* LEFT COLUMN */}
-          <div
-            ref={leftColRef}
-            className="space-y-8 max-w-xl"
-          >
+          <div ref={leftColRef} className="space-y-8 max-w-xl">
             <p className="text-lg text-gray-400 leading-relaxed">
               I’m an aspiring <span className="text-white">Full Stack Developer</span> with
               hands-on experience in building scalable, responsive web
@@ -115,10 +133,7 @@ export default function About() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div
-            ref={rightColRef}
-            className="relative group"
-          >
+          <div ref={rightColRef} className="relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 to-cyan-400/20 rounded-2xl blur-xl transition-all duration-700 group-hover:blur-2xl" />
 
             <div
