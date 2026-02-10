@@ -172,12 +172,6 @@ export default function Projects() {
                 overflow-hidden"
             >
               {/* Gradient Hover Background */}
-              <div
-                className={`absolute inset-0 opacity-0
-                  bg-gradient-to-br ${project.hover}
-                  transition-opacity duration-500
-                  group-hover:opacity-100`}
-              />
 
               {/* Card Content */}
               <div className="relative z-10">
