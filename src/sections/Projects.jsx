@@ -163,7 +163,7 @@ export default function Projects() {
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className="group relative rounded-2xl p-7
+              className="group relative rounded-2xl px-8 py-8
                 bg-white/5 backdrop-blur-lg
                 border border-white/10
                 transition-all duration-300 ease-out hover:border-teal-400/30
@@ -171,7 +171,6 @@ export default function Projects() {
                 hover:shadow-2xl hover:shadow-teal-400/10
                 overflow-hidden"
             >
-              {/* Gradient Hover Background */}
 
               {/* Card Content */}
               <div className="relative z-10">
