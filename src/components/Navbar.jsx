@@ -57,7 +57,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center backdrop-blur-sm text-white overflow-x-hidden"
+      className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center text-white overflow-x-hidden"
     >
 
       <h1
