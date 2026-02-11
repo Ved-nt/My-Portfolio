@@ -8,6 +8,7 @@ import Achievements from "./sections/Achievements.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollIndicator from "./components/ScrollIndicator.jsx";
+import Contacts from "./sections/Contacts.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,6 +78,10 @@ export default function App() {
 
       <section id="achievements" className="relative z-10 min-h-screen">
         <Achievements />
+      </section>
+
+      <section id="contact" className="realative z-10 min-h-screen">
+        <Contacts />
       </section>
     </div>
   );
