@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedShapes from "../components/AnimatedShapes";
-import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Instagram, Send } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,14 +57,14 @@ export default function Contact() {
           </h2>
 
           <p className="text-gray-400 text-lg max-w-md">
-            I’m always open to discussing new projects, creative ideas,
-            or opportunities to collaborate.
+            I’m always open to discussing new projects, creative ideas, or
+            opportunities to collaborate.
           </p>
 
           <div className="space-y-6 pt-6">
             <div className="flex items-center gap-4 text-gray-300">
               <Mail size={18} className="text-teal-400" />
-              vedant@example.com
+              vedantsh06@gmail.com
             </div>
 
             <div className="flex items-center gap-4 text-gray-300">
@@ -73,30 +73,51 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-6 pt-4">
-              {[Github, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-11 h-11 rounded-full bg-white/5 backdrop-blur-md
-                             flex items-center justify-center
-                             hover:bg-teal-400/20 hover:scale-110
-                             transition-all duration-300"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
+              <a
+                href="https://github.com/Ved-nt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/5 backdrop-blur-md
+                           flex items-center justify-center
+                           hover:bg-teal-400/20 hover:scale-110
+                           transition-all duration-300"
+              >
+                <Github size={18} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/vedantsh11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/5 backdrop-blur-md
+                           flex items-center justify-center
+                           hover:bg-teal-400/20 hover:scale-110
+                           transition-all duration-300"
+              >
+                <Linkedin size={18} />
+              </a>
+
+              <a
+                href="https://instagram.com/vedantsh06"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/5 backdrop-blur-md
+                           flex items-center justify-center
+                           hover:bg-teal-400/20 hover:scale-110
+                           transition-all duration-300"
+              >
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
         </div>
 
         {/* RIGHT SIDE — Modern Glass Form */}
         <div className="relative p-10 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl shadow-2xl">
-          
           {/* Subtle Inner Glow */}
           <div className="absolute inset-0 rounded-3xl bg-teal-400/5 blur-2xl pointer-events-none"></div>
 
           <form className="relative space-y-6">
-
             {["Name", "Email"].map((label, i) => (
               <div key={i} className="relative">
                 <input
@@ -110,11 +131,13 @@ export default function Contact() {
                              focus:outline-none
                              transition-all duration-300"
                 />
-                <label className="absolute left-4 top-4 text-gray-400 text-sm
+                <label
+                  className="absolute left-4 top-4 text-gray-400 text-sm
                                   peer-focus:-top-4 peer-focus:text-xs
                                   peer-focus:text-teal-400
                                   peer-valid:-top-4 peer-valid:text-xs
-                                  transition-all duration-300">
+                                  transition-all duration-300"
+                >
                   {label}
                 </label>
               </div>
@@ -132,11 +155,13 @@ export default function Contact() {
                            focus:outline-none
                            transition-all duration-300 resize-none"
               />
-              <label className="absolute left-4 top-4 text-gray-400 text-sm
+              <label
+                className="absolute left-4 top-4 text-gray-400 text-sm
                                 peer-focus:-top-4 peer-focus:text-xs
                                 peer-focus:text-teal-400
                                 peer-valid:-top-4 peer-valid:text-xs
-                                transition-all duration-300">
+                                transition-all duration-300"
+              >
                 Message
               </label>
             </div>
@@ -151,7 +176,6 @@ export default function Contact() {
               Send Message
               <Send size={16} />
             </button>
-
           </form>
         </div>
       </div>
