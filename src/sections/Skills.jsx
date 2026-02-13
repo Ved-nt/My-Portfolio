@@ -249,9 +249,9 @@ export default function Skills() {
               </div>
 
               <div className="grid grid-cols-2 gap-6">
-                <SkillItem icon={<SiPython />} label="Python" />
-                <SkillItem icon={<FaJava />} label="Java" />
-                <SkillItem icon={<SiC />} label="C Language" />
+                <SkillItem className="text-sm" icon={<SiPython />} label="Python" />
+                <SkillItem className="text-xl" icon={<FaJava />} label="Java" />
+                <SkillItem className="text-sm" icon={<SiC />} label="C Language" />
               </div>
             </div>
           </div>
