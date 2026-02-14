@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Glass background -->
+    <linearGradient id="glassBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"></stop>
+      <stop offset="100%" stop-color="#020617"></stop>
+    </linearGradient>
+
+    <!-- Glass highlight -->
+    <linearGradient id="glassHighlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"></stop>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <!-- AI neon accent -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"></stop>
+      <stop offset="100%" stop-color="#6366f1"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Glass base -->
+  <rect width="64" height="64" rx="14" fill="url(#glassBg)"></rect>
+
+  <!-- Frosted glass overlay -->
+  <rect width="64" height="64" rx="14" fill="url(#glassHighlight)"></rect>
+
+  <!-- Geometric V -->
+  <path d="M14 16 L26 48 L32 48 L20 16 Z" fill="url(#accent)"></path>
+
+  <!-- Geometric S (Monogram style, NOT text) -->
+  <path d="M46 18 H38
+       C34 18 34 24 38 26
+       H42
+       C48 26 48 38 42 38
+       H38
+       C34 38 34 46 38 46
+       H46" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+
+</svg>
