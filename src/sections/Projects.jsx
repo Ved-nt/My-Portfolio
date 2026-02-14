@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const funProjects = [
   {
-    title: "Bhagavad Gita Explorer",
+    title: "Snake Game",
     description: "Explore chapters and verses with AI-powered insights.",
     tech: ["React", "Node.js", "Express", "OpenAI API"],
     live: "#",
@@ -15,31 +15,71 @@ const funProjects = [
     hover: "from-teal-500/15 via-cyan-500/10 to-sky-500/15",
   },
   {
-    title: "3D Portfolio Experiments",
+    title: "ThinkTank",
     description: "Creative Three.js scenes and micro-interactions.",
     tech: ["Three.js", "GSAP", "React", "WebGL"],
     live: "#",
     code: "#",
     hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
   },
+  {
+    title: "Image Editor",
+    description: "Creative Three.js scenes and micro-interactions.",
+    tech: ["Three.js", "GSAP", "React", "WebGL"],
+    live: "#",
+    code: "#",
+    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+  },
+  {
+    title: "Adidas Reimagined Website",
+    description: "Creative Three.js scenes and micro-interactions.",
+    tech: ["Three.js", "GSAP", "React", "WebGL"],
+    live: "#",
+    code: "#",
+    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+  },
+  {
+    title: "Valorant Reimagined Website",
+    description: "Creative Three.js scenes and micro-interactions.",
+    tech: ["Three.js", "GSAP", "React", "WebGL"],
+    live: "#",
+    code: "#",
+    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+  },
+  {
+    title: "Cynthia Ugwu Landing Page",
+    description: "Creative Three.js scenes and micro-interactions.",
+    tech: ["Three.js", "GSAP", "React", "WebGL"],
+    live: "https://reimagined-phi.vercel.app/",
+    code: "https://github.com/Ved-nt/reimagined",
+    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+  },
 ];
 
 const realProjects = [
   {
-    title: "Meditation & Journal Tracker",
-    description: "Full-stack app with auth, PostgreSQL & AWS deployment.",
+    title: "SORTFIY: Sorting Algorithm Visualiser",
+    description: "SORTIFY is a sleek, interactive sorting algorithm visualizer built with React and Vite. Designed for learners and educators, it showcases popular sorting techniques like Bubble, Selection, Insertion, Merge, and Quick Sort through animated bar charts and step-by-step transitions.",
     tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-    live: "#",
-    code: "#",
+    live: "https://sortify-algo-lab1.netlify.app/",
+    code: "https://github.com/Ved-nt/SORTIFY",
     hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
   },
   {
-    title: "Book Notes Manager",
+    title: "AI for Medicational interaction and side-effect prediction",
     description: "Knowledge system inspired by Derek Sivers.",
     tech: ["React", "Express", "PostgreSQL", "REST API"],
     live: "#",
     code: "#",
     hover: "from-slate-500/15 via-gray-500/10 to-zinc-500/15",
+  },
+  {
+    title: "Card Dealership Website",
+    description: "Full-stack app with auth, PostgreSQL & AWS deployment.",
+    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
+    live: "#",
+    code: "#",
+    hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
   },
 ];
 
@@ -49,9 +89,9 @@ export default function Projects() {
   const underlineRef = useRef(null);
   const cardsRef = useRef([]);
 
-  const [activeTab, setActiveTab] = useState("fun");
+  const [activeTab, setActiveTab] = useState("real");
 
-  const projects = activeTab === "fun" ? funProjects : realProjects;
+  const projects = activeTab === "real" ? realProjects : funProjects;
 
   /* Main heading animation */
   useEffect(() => {
@@ -111,7 +151,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative cursor-pointer min-h-screen flex items-center justify-center px-6 overflow-hidden text-white"
+      className="relative cursor-pointer px-6 py-20 scroll-mt-24 min-h-screen flex items-center justify-center px-6 overflow-hidden text-white"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
@@ -136,8 +176,8 @@ export default function Projects() {
         {/* SUBHEADINGS */}
         <div className="flex justify-center gap-10 mb-16">
           {[
-            { key: "fun", label: "Fun Projects" },
             { key: "real", label: "Real World Projects" },
+            { key: "fun", label: "Fun Projects" },
           ].map(({ key, label }) => (
             <button
               key={key}
