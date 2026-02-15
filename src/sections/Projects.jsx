@@ -9,14 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const funProjects = [
   {
-    title: "Snake Game",
-    description: "Explore chapters and verses with AI-powered insights.",
-    tech: ["React", "Node.js", "Express", "OpenAI API"],
-    live: "#",
-    code: "#",
-    hover: "from-teal-500/15 via-cyan-500/10 to-sky-500/15",
-  },
-  {
     title: "ThinkTank",
     description: "Your personal space to think, learn, and grow.ThinkTank is more than just a productivity tool—it’s your digital companion for learning, reflection, and creativity.",
     tech: ["Three.js", "GSAP", "React", "WebGL"],
@@ -42,6 +34,15 @@ const funProjects = [
     code: "https://github.com/Ved-nt/Valorant",
     hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
     image:"/valorant.png"
+  },
+  {
+    title: "Snake Game",
+    description: "It is a fun Snake Game.",
+    tech: ["HTML","CSS","JavaScript"],
+    live: "https://snake-game-five-tan.vercel.app/",
+    code: "https://github.com/Ved-nt/snake_game",
+    hover: "from-teal-500/15 via-cyan-500/10 to-sky-500/15",
+    image: "/snakegame.png"
   },
   {
     title: "Image Editor",
