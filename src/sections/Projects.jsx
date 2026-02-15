@@ -18,43 +18,47 @@ const funProjects = [
   },
   {
     title: "ThinkTank",
-    description: "Creative Three.js scenes and micro-interactions.",
+    description: "Your personal space to think, learn, and grow.ThinkTank is more than just a productivity tool—it’s your digital companion for learning, reflection, and creativity.",
     tech: ["Three.js", "GSAP", "React", "WebGL"],
-    live: "#",
-    code: "#",
+    live: "https://thinktank-iota.vercel.app/",
+    code: "https://github.com/Ved-nt/ThinkTank",
     hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+    image: "/thinktank.png"
+  },
+  {
+    title: "Adidas Reimagined Website",
+    description: "Adidas website redesigned.",
+    tech: ["HTML","CSS","JavaScript", "GSAP"],
+    live: "https://re-imagine-adidas.netlify.app/",
+    code: "https://github.com/Ved-nt/addidas",
+    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+    image:"/adidas.png"
+  },
+  {
+    title: "Valorant Reimagined Website",
+    description: "Valorant website redesigned for reimagine hackathon round 2.",
+    tech: ["HTML","CSS","JavaScript", "GSAP"],
+    live: "https://valorant12.netlify.app/",
+    code: "https://github.com/Ved-nt/Valorant",
+    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+    image:"/valorant.png"
   },
   {
     title: "Image Editor",
     description: "Creative Three.js scenes and micro-interactions.",
-    tech: ["Three.js", "GSAP", "React", "WebGL"],
+    tech: ["HTML","CSS","JavaScript"],
     live: "#",
-    code: "#",
-    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
-  },
-  {
-    title: "Adidas Reimagined Website",
-    description: "Creative Three.js scenes and micro-interactions.",
-    tech: ["Three.js", "GSAP", "React", "WebGL"],
-    live: "#",
-    code: "#",
-    hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
-  },
-  {
-    title: "Valorant Reimagined Website",
-    description: "Creative Three.js scenes and micro-interactions.",
-    tech: ["Three.js", "GSAP", "React", "WebGL"],
-    live: "#",
-    code: "#",
+    code: "https://github.com/Ved-nt/image-editor",
     hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
   },
   {
     title: "Cynthia Ugwu Landing Page",
-    description: "Creative Three.js scenes and micro-interactions.",
-    tech: ["Three.js", "GSAP", "React", "WebGL"],
+    description: "This is Cynthia ugwu reimagined website.",
+    tech: ["HTML","CSS","JavaScript", "GSAP"],
     live: "https://reimagined-phi.vercel.app/",
     code: "https://github.com/Ved-nt/reimagined",
     hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+    image:"/reimagined.png"
   },
 ];
 
@@ -62,10 +66,11 @@ const realProjects = [
   {
     title: "SORTFIY: Sorting Algorithm Visualiser",
     description: "SORTIFY is a sleek, interactive sorting algorithm visualizer. Designed for learners and educators, it showcases popular sorting techniques like Bubble, Selection, Insertion, Merge, and Quick Sort through animated bar charts and step-by-step transitions.",
-    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
+    tech: ["React", "JavaScript", "CSS"],
     live: "https://sortify-algo-lab1.netlify.app/",
     code: "https://github.com/Ved-nt/SORTIFY",
     hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
+    image: "/sortify.png"
   },
   {
     title: "AI for Medicational interaction and side-effect prediction",
@@ -74,14 +79,16 @@ const realProjects = [
     live: "#",
     code: "#",
     hover: "from-slate-500/15 via-gray-500/10 to-zinc-500/15",
+    image:"/aiproject.png"
   },
   {
     title: "Card Dealership Website",
-    description: "Full-stack app with auth, PostgreSQL & AWS deployment.",
-    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-    live: "#",
-    code: "#",
+    description: "Developed and deployed a full-stack car dealership platform to streamline vehicle listings and customer inquiries.Implemented secure admin authentication with dynamic routes for adding, editing, and deleting car listings",
+    tech: ["React","Node.js","Express.js","MongoDB","TailwindCSS"],
+    live: "https://autotradzllp.vercel.app/",
+    code: "https://github.com/Ved-nt/Car_Dealership",
     hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
+    image:"/cardealership.png"
   },
 ];
 
@@ -225,11 +232,11 @@ export default function Projects() {
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
               className="group relative rounded-3xl overflow-hidden
-                         bg-white/5 backdrop-blur-xl
-                         border border-white/10
-                         transition-all duration-500
-                         hover:border-teal-400/30
-                         hover:shadow-2xl hover:shadow-teal-400/10"
+                bg-white/5 backdrop-blur-xl
+                border border-white/10
+                transition-all duration-500
+                hover:border-teal-400/30
+                hover:shadow-2xl hover:shadow-teal-400/10"
             >
               {/* IMAGE SECTION */}
               <div
@@ -267,10 +274,10 @@ export default function Projects() {
                     <span
                       key={idx}
                       className="px-3 py-1 text-sm rounded-full
-                                 bg-white/10 text-white/70
-                                 backdrop-blur-md
-                                 transition-all duration-300
-                                 group-hover:bg-white/20"
+                        bg-white/10 text-white/70
+                        backdrop-blur-md
+                        transition-all duration-300
+                        group-hover:bg-white/20"
                     >
                       {tech}
                     </span>
