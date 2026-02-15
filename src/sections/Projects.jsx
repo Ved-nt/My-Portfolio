@@ -5,6 +5,8 @@ import AnimatedShapes from "../components/AnimatedShapes.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* ---------------- PROJECT DATA ---------------- */
+
 const funProjects = [
   {
     title: "Snake Game",
@@ -59,7 +61,7 @@ const funProjects = [
 const realProjects = [
   {
     title: "SORTFIY: Sorting Algorithm Visualiser",
-    description: "SORTIFY is a sleek, interactive sorting algorithm visualizer built with React and Vite. Designed for learners and educators, it showcases popular sorting techniques like Bubble, Selection, Insertion, Merge, and Quick Sort through animated bar charts and step-by-step transitions.",
+    description: "SORTIFY is a sleek, interactive sorting algorithm visualizer. Designed for learners and educators, it showcases popular sorting techniques like Bubble, Selection, Insertion, Merge, and Quick Sort through animated bar charts and step-by-step transitions.",
     tech: ["React", "Node.js", "PostgreSQL", "AWS"],
     live: "https://sortify-algo-lab1.netlify.app/",
     code: "https://github.com/Ved-nt/SORTIFY",
@@ -83,6 +85,8 @@ const realProjects = [
   },
 ];
 
+/* ---------------- COMPONENT ---------------- */
+
 export default function Projects() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
@@ -93,10 +97,8 @@ export default function Projects() {
 
   const projects = activeTab === "real" ? realProjects : funProjects;
 
-  /* Main heading animation */
+  /* -------- Heading Animation -------- */
   useEffect(() => {
-    if (!sectionRef.current) return; // ✅ guard against null
-
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
@@ -127,40 +129,66 @@ export default function Projects() {
           },
         }
       );
-    }, sectionRef.current); // ✅ use .current here
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
-  /* Card animation on tab switch */
+  /* -------- Card Entrance Animation -------- */
   useEffect(() => {
     gsap.fromTo(
       cardsRef.current,
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: 60, scale: 0.95 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        ease: "power3.out",
+        scale: 1,
+        duration: 0.9,
+        ease: "power4.out",
         stagger: 0.15,
       }
     );
   }, [activeTab]);
 
+  /* -------- Image Hover Parallax -------- */
+  const handleImageMove = (e, el) => {
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / 20;
+    const y = (e.clientY - rect.top - rect.height / 2) / 20;
+
+    gsap.to(el.querySelector("img"), {
+      x,
+      y,
+      scale: 1.05,
+      duration: 0.4,
+      ease: "power3.out",
+    });
+  };
+
+  const resetImage = (el) => {
+    gsap.to(el.querySelector("img"), {
+      x: 0,
+      y: 0,
+      scale: 1,
+      duration: 0.5,
+      ease: "power3.out",
+    });
+  };
+
   return (
     <section
       id="projects"
       ref={sectionRef}
-      className="relative cursor-pointer px-6 py-20 scroll-mt-24 min-h-screen flex items-center justify-center px-6 overflow-hidden text-white"
+      className="relative min-h-screen py-28 px-6 text-white overflow-hidden"
     >
-      {/* Background */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
         <AnimatedShapes />
       </div>
 
-      <div className="max-w-6xl w-full relative z-10 text-center">
-        {/* MAIN HEADING */}
-        <div className="inline-block mb-14">
+      <div className="max-w-6xl mx-auto relative z-10">
+
+        {/* HEADING */}
+        <div className="text-center mb-16">
           <h2
             ref={titleRef}
             className="text-5xl md:text-7xl font-bold tracking-tight"
@@ -169,76 +197,87 @@ export default function Projects() {
           </h2>
           <div
             ref={underlineRef}
-            className="h-[3px] w-full bg-teal-400 mt-4 rounded-full"
+            className="h-[3px] w-40 bg-teal-400 mt-4 mx-auto"
           />
         </div>
 
-        {/* SUBHEADINGS */}
-        <div className="flex justify-center gap-10 mb-16">
-          {[
-            { key: "real", label: "Real World Projects" },
-            { key: "fun", label: "Fun Projects" },
-          ].map(({ key, label }) => (
+        {/* TABS */}
+        <div className="flex justify-center gap-12 mb-20">
+          {["real", "fun"].map((key) => (
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`relative text-lg font-medium transition-all duration-300
-                ${
-                  activeTab === key
-                    ? "text-teal-300 after:scale-x-100"
-                    : "text-white/50 hover:text-white"
-                }
-                after:content-[''] after:block after:h-[2px]
-                after:bg-teal-400 after:mt-2 after:scale-x-0
-                after:transition-transform after:duration-300`}
+              className={`text-lg font-medium transition-all duration-300 ${
+                activeTab === key
+                  ? "text-teal-300"
+                  : "text-white/50 hover:text-white"
+              }`}
             >
-              {label}
+              {key === "real" ? "Real World Projects" : "Fun Projects"}
             </button>
           ))}
         </div>
 
-        {/* PROJECT CARDS */}
-        <div className="grid md:grid-cols-2 gap-10 text-left">
+        {/* CARDS */}
+        <div className="grid md:grid-cols-2 gap-12">
           {projects.map((project, i) => (
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className="group relative rounded-2xl px-8 py-8
-                bg-white/5 backdrop-blur-lg
-                border border-white/10
-                transition-all duration-300 ease-out hover:border-teal-400/30
-                hover:scale-[1.04] hover:-translate-y-2
-                hover:shadow-2xl hover:shadow-teal-400/10
-                overflow-hidden"
+              className="group relative rounded-3xl overflow-hidden
+                         bg-white/5 backdrop-blur-xl
+                         border border-white/10
+                         transition-all duration-500
+                         hover:border-teal-400/30
+                         hover:shadow-2xl hover:shadow-teal-400/10"
             >
+              {/* IMAGE SECTION */}
+              <div
+                className="relative h-64 overflow-hidden cursor-pointer"
+                onMouseMove={(e) =>
+                  handleImageMove(e, e.currentTarget)
+                }
+                onMouseLeave={(e) =>
+                  resetImage(e.currentTarget)
+                }
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500"
+                />
 
-              {/* Card Content */}
-              <div className="relative z-10">
-                <h3 className="text-2xl font-semibold mb-3 tracking-tight">
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed mb-5">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* TECHNOLOGIES */}
+                {/* TECH */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
                       className="px-3 py-1 text-sm rounded-full
-                        bg-white/10 text-white/70
-                        backdrop-blur-md
-                        transition-colors duration-300
-                        group-hover:bg-white/20"
+                                 bg-white/10 text-white/70
+                                 backdrop-blur-md
+                                 transition-all duration-300
+                                 group-hover:bg-white/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* ACTIONS */}
+                {/* BUTTONS */}
                 <div className="flex gap-4">
                   <a
                     href={project.live}
@@ -264,9 +303,11 @@ export default function Projects() {
                   </a>
                 </div>
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
