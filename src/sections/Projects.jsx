@@ -48,9 +48,10 @@ const funProjects = [
     title: "Image Editor",
     description: "Creative Three.js scenes and micro-interactions.",
     tech: ["HTML","CSS","JavaScript"],
-    live: "#",
+    live: "https://imageeditor-seven.vercel.app/",
     code: "https://github.com/Ved-nt/image-editor",
     hover: "from-cyan-500/15 via-blue-500/10 to-indigo-500/15",
+    image: "/image-editor.png"
   },
   {
     title: "Cynthia Ugwu Landing Page",
