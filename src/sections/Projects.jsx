@@ -19,7 +19,7 @@ const funProjects = [
   },
   {
     title: "Adidas Reimagined Website",
-    description: "Adidas website redesigned.",
+    description: "Adidas website redesigned. RE-IMAGINE the future of sport with Adidas Innovative gear for your ultimate performance.",
     tech: ["HTML","CSS","JavaScript", "GSAP"],
     live: "https://re-imagine-adidas.netlify.app/",
     code: "https://github.com/Ved-nt/addidas",
@@ -74,7 +74,7 @@ const realProjects = [
     image: "/sortify.png"
   },
   {
-    title: "AI for Medicational interaction and side-effect prediction",
+    title: "AI for Medicational interaction and side-effect prediction (NOT YET DEPOLYED)",
     description: "Knowledge system inspired by Derek Sivers.",
     tech: ["React", "Express", "PostgreSQL", "REST API"],
     live: "#",
@@ -90,6 +90,15 @@ const realProjects = [
     code: "https://github.com/Ved-nt/Car_Dealership",
     hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
     image:"/cardealership.png"
+  },
+  {
+    title: "Bhagavad Gita Website",
+    description: "Developed a web application to provide chapter-wise insights from the Bhagavad Gita. Integrated an external API using Axios to fetch and display content dynamically.",
+    tech: ["HTML","CSS","JavaScript","Node.js","Express.js","API","axios"],
+    live: "https://autotradzllp.vercel.app/",
+    code: "https://github.com/Ved-nt/API",
+    hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
+    image:"/bhagavadgita.png"
   },
 ];
 
