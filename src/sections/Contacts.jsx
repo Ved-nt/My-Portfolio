@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedShapes from "../components/AnimatedShapes";
 import { Mail, MapPin, Github, Linkedin, Instagram, Send } from "lucide-react";
+import emailjs from "emailjs-com";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,31 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
+  // EmailJS handler
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_mivvr9w",   // replace with your actual Service ID
+        "template_3nwgi18",  // replace with your actual Template ID
+        e.target,
+        "l889TnnogtiqlX4rx"    // replace with your actual Public Key
+      )
+      .then(
+        (result) => {
+          console.log("Message sent:", result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log("Error:", error.text);
+          alert("Failed to send message. Please try again.");
+        }
+      );
+
+    e.target.reset(); // clear form after submission
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -47,7 +73,7 @@ export default function Contact() {
         ref={contentRef}
         className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-20 items-center"
       >
-        {/* LEFT SIDE — Editorial Style */}
+        {/* LEFT SIDE */}
         <div className="space-y-8">
           <h2 className="text-5xl md:text-6xl font-bold leading-tight">
             Let’s create
@@ -112,16 +138,16 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* RIGHT SIDE — Modern Glass Form */}
+        {/* RIGHT SIDE — Form */}
         <div className="relative p-10 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl shadow-2xl">
-          {/* Subtle Inner Glow */}
           <div className="absolute inset-0 rounded-3xl bg-teal-400/5 blur-2xl pointer-events-none"></div>
 
-          <form className="relative space-y-6">
+          <form className="relative space-y-6" onSubmit={sendEmail}>
             {["Name", "Email"].map((label, i) => (
               <div key={i} className="relative">
                 <input
                   type={label === "Email" ? "email" : "text"}
+                  name={label.toLowerCase()}   // important for EmailJS mapping
                   required
                   placeholder=" "
                   className="peer w-full px-4 py-4 bg-white/5 rounded-xl
@@ -146,6 +172,7 @@ export default function Contact() {
             <div className="relative">
               <textarea
                 rows="4"
+                name="message"   // important for EmailJS mapping
                 required
                 placeholder=" "
                 className="peer w-full px-4 py-4 bg-white/5 rounded-xl
