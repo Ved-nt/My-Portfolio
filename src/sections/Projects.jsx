@@ -78,8 +78,8 @@ const realProjects = [
     title: "AI for Medicational interaction and side-effect prediction (NOT YET DEPOLYED)",
     description: "Knowledge system inspired by Derek Sivers.",
     tech: ["React", "Express", "PostgreSQL", "REST API"],
-    live: "#",
-    code: "#",
+    live: "/",
+    code: "/",
     hover: "from-slate-500/15 via-gray-500/10 to-zinc-500/15",
     image:"/aiproject.png"
   },
@@ -96,7 +96,7 @@ const realProjects = [
     title: "Bhagavad Gita Website",
     description: "Developed a web application to provide chapter-wise insights from the Bhagavad Gita. Integrated an external API using Axios to fetch and display content dynamically.",
     tech: ["HTML","CSS","JavaScript","Node.js","Express.js","API","axios"],
-    live: "https://autotradzllp.vercel.app/",
+    live: "https://api-8i17.onrender.com/",
     code: "https://github.com/Ved-nt/API",
     hover: "from-blue-500/15 via-indigo-500/10 to-violet-500/15",
     image:"/bhagavadgita.png"
