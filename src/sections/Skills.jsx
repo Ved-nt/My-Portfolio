@@ -20,7 +20,7 @@ import {
   SiPython,
   SiC
 } from "react-icons/si";
-import spring-boot-logo from "../assets/spring-boot-logo";
+import springBootLogo from "../assets/spring-boot-logo";
 import {FaJava} from "react-icons/fa"
 import AnimatedBackground from "../components/AnimatedBackground.jsx";
 
@@ -49,7 +49,7 @@ const skillsData = [
       { name: "PostgreSQL", icon: <SiPostgresql /> },
       { name: "MongoDB", icon: <SiMongodb /> },
       { name: "REST APIs", icon: "🌐" },
-      {name: "Spring Boot", icon: <img src={spring-boot-logo} alt="Spring Boot" className="w- h-6" />},
+      {name: "Spring Boot", icon: <img src={springBootLogo} alt="Spring Boot" className="w- h-6" />},
     ],
   },
   {
