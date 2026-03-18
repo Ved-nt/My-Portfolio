@@ -20,7 +20,7 @@ import {
   SiPython,
   SiC
 } from "react-icons/si";
-import springBootLogo from "../assets/spring-boot-logo";
+import springBootLogo from "../assets/springBootLogo.png";
 import {FaJava} from "react-icons/fa"
 import AnimatedBackground from "../components/AnimatedBackground.jsx";
 
