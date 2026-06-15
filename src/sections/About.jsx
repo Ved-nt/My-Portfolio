@@ -152,7 +152,7 @@ export default function About() {
                 {[
                   "New Delhi",
                   "KIIT University – CSE",
-                  "CGPA: 9.07 / 10",
+                  "CGPA: 9.11 / 10",
                   "Open to Opportunities",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-4">
