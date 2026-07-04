@@ -21,6 +21,13 @@ const achievements = [
       "Selected from 40,000+ students across India to learn advanced graph techniques under a Codeforces Master.",
     date: "March 2025",
   },
+  {
+    icon: Trophy,
+    title: "Konverge Hackathon - Top 20",
+    descritption: 
+      "Recognized among the Top 20 teams for developing a scalable web-based solution during the hackathon.",
+    date: " February 2026"
+    
 ];
 
 export default function Achievements() {
