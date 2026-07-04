@@ -27,6 +27,7 @@ const achievements = [
     descritption: 
       "Recognized among the Top 20 teams for developing a scalable web-based solution during the hackathon.",
     date: " February 2026"
+  }
     
 ];
 
