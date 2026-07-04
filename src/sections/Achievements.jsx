@@ -24,7 +24,7 @@ const achievements = [
   {
     icon: Trophy,
     title: "Konverge Hackathon - Top 20",
-    descritption: 
+    description: 
       "Recognized among the Top 20 teams for developing a scalable web-based solution during the hackathon.",
     date: " February 2026"
   }
