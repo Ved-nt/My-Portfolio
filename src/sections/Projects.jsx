@@ -75,12 +75,12 @@ const realProjects = [
     image: "/sortify.png"
   },
   {
-    title: "AI for Medicational interaction and side-effect prediction (NOT YET DEPOLYED)",
-    description: "Knowledge system inspired by Derek Sivers.",
-    tech: ["React", "Express", "PostgreSQL", "REST API"],
-    live: "/",
-    code: "/",
-    hover: "from-slate-500/15 via-gray-500/10 to-zinc-500/15",
+    title: "AI Study Suite",
+    description: "AI-powered learning platform featuring note summarization, quiz generation, analytics dashboard, and an intelligent chat tutor with secure authentication.",
+    tech: ["React","Spring Boot","PostgreSQL","Spring Security","JWT","Grok AI",],
+    live: "https://ai-study-pied.vercel.app/login",
+    code: "https://github.com/Ved-nt/AIStudy",
+    hover: "from-violet-500/15 via-cyan-500/10 to-fuchsia-500/15",
     image:"/aiproject.png"
   },
   {
